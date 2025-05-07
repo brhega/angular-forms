@@ -12,6 +12,10 @@ export class Template1Component {
   formModel = new RegistrationModel();
 
   public onSubmit(): void {
-    // Your existing code here
+    alert(`Form Submitted!\n\n
+      First Name: ${this.formModel.firstName}\n
+      Last Name: ${this.formModel.lastName}\n
+      Email: ${this.formModel.email}\n
+      Phone: ${this.formModel.phone}`);
   }
 }

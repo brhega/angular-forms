@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RegistrationModel } from './RegistrationModel';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-2',
@@ -11,11 +11,17 @@ import { FormsModule } from '@angular/forms';
 export class Template2Component {
   formModel = new RegistrationModel();
   
-    public onSubmit(): void {
-      alert(`Form Submitted!\n\n
-        First Name: ${this.formModel.firstName}\n
-        Last Name: ${this.formModel.lastName}\n
-        Email: ${this.formModel.email}\n
-        Phone: ${this.formModel.phone}`);
+  public onSubmit(form: NgForm): void {
+    if (!form.valid) {
+      form.control.markAllAsTouched();
     }
+    else {
+      alert(`Form Submitted!\n
+        First Name: ${this.formModel.firstName}
+        Last Name: ${this.formModel.lastName}
+        Email: ${this.formModel.email}
+        Phone: ${this.formModel.phone}`);
+
+    }
+  }
 }

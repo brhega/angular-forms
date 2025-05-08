@@ -1,22 +1,30 @@
 <div>
-    <form (ngSubmit)="onSubmit()" #templateForm="ngForm">
+    <form (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
         <div class="mb-3">
-            <label for="name">First Name</label>
-            <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="formModel.firstName"/>
+            <label for="name" class="form-label">First Name</label>
+            <input type="text" id="firstName" name="firstName" class="form-control" required 
+                [(ngModel)]="formModel.firstName" #firstName="ngModel"/>
+            @if (firstName.invalid && firstName.touched) {
+                <p class="text-danger">First Name is required</p>
+            }
         </div>
 
         <div class="mb-3">
-            <label for="name">Last Name</label>
-            <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="formModel.lastName"/>
+            <label for="name" class="form-label">Last Name</label>
+            <input type="text" id="lastName" name="lastName" class="form-control" required 
+                [(ngModel)]="formModel.lastName" #lastName="ngModel"/>
+            @if (lastName.invalid && lastName.touched) {
+                <p class="text-danger">First Name is required</p>
+            }
         </div>
 
         <div class="mb-3">
-            <label for="email">Email</label>
+            <label for="email" class="form-label">Email</label>
             <input type="email" id="email" name="email" class="form-control" [(ngModel)]="formModel.email"/>
         </div>
 
         <div class="mb-3">
-            <label for="phone">Phone</label>
+            <label for="phone" class="form-label">Phone</label>
             <input type="text" id="phone" name="phone" class="form-control" [(ngModel)]="formModel.phone"/>
         </div>
 

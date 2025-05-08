@@ -1,35 +1,45 @@
 <div>
-    <form (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
+    <form class="needs-validation" novalidate (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
         <div class="mb-3">
-            <label for="name" class="form-label">First Name</label>
+            <label for="firstName" class="form-label">First Name</label>
             <input type="text" id="firstName" name="firstName" class="form-control" required 
-                [(ngModel)]="formModel.firstName" #firstName="ngModel"/>
-            @if (firstName.invalid && firstName.touched) {
-                <p class="text-danger">First Name is required</p>
-            }
+                [(ngModel)]="formModel.firstName" #firstName="ngModel"
+                [ngClass]="{'is-invalid': firstName.invalid && firstName.touched, 'is-valid': firstName.valid && firstName.touched}" />
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                First Name is required
+            </div>
         </div>
 
         <div class="mb-3">
-            <label for="name" class="form-label">Last Name</label>
+            <label for="lastName" class="form-label">Last Name</label>
             <input type="text" id="lastName" name="lastName" class="form-control" required 
-                [(ngModel)]="formModel.lastName" #lastName="ngModel"/>
-            @if (lastName.invalid && lastName.touched) {
-                <p class="text-danger">First Name is required</p>
-            }
+                [(ngModel)]="formModel.lastName" #lastName="ngModel"
+                [ngClass]="{'is-invalid': lastName.invalid && lastName.touched, 'is-valid': lastName.valid && lastName.touched}" />
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Last Name is required
+            </div>
         </div>
 
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-control" [(ngModel)]="formModel.email"/>
+            <input type="email" id="email" name="email" class="form-control"
+                [(ngModel)]="formModel.email" #email="ngModel" />
         </div>
 
         <div class="mb-3">
             <label for="phone" class="form-label">Phone</label>
-            <input type="text" id="phone" name="phone" class="form-control" [(ngModel)]="formModel.phone"/>
+            <input type="text" id="phone" name="phone" class="form-control"
+                [(ngModel)]="formModel.phone" #phone="ngModel" />
         </div>
 
         <div class="mb-3">
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit" [disabled]="templateForm.invalid">Submit</button>
         </div>
     </form>
 </div>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RegistrationModel } from './RegistrationModel';
 import { FormsModule, NgForm } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-template-3',
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass],
   templateUrl: './template-3.component.html',
   styleUrl: './template-3.component.scss'
 })

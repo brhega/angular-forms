@@ -13,10 +13,10 @@ export class Reactive2Component {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: [''],
-      phone: ['']
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required],
+      email: [null],
+      phone: [null]
     });
   }
 

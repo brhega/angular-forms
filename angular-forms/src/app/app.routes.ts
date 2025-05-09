@@ -4,6 +4,7 @@ import { Template2Component } from './template-2/template-2.component';
 import { Template3Component } from './template-3/template-3.component';
 import { Template4Component } from './template-4/template-4.component';
 import { Reactive1Component } from './reactive-1/reactive-1.component';
+import { Reactive2Component } from './reactive-2/reactive-2.component';
 
 export const routes: Routes = [
   { path: 'template-1', component: Template1Component },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'template-3', component: Template3Component },
   { path: 'template-4', component: Template4Component },
   { path: 'reactive-1', component: Reactive1Component },
+  { path: 'reactive-2', component: Reactive2Component },
   { path: '', redirectTo: 'template-1', pathMatch: 'full' },
 ];

@@ -14,7 +14,7 @@
             <input type="text" id="lastName" name="lastName" class="form-control" required 
                 [(ngModel)]="formModel.lastName" #lastName="ngModel"/>
             @if (lastName.invalid && lastName.touched) {
-                <p class="text-danger">First Name is required</p>
+                <p class="text-danger">Last Name is required</p>
             }
         </div>
 

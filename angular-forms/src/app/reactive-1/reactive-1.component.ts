@@ -8,6 +8,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./reactive-1.component.scss']
 })
 export class Reactive1Component {
+
+  //you can technically use reactive forms without a formgroup,
+  // but its required to us the (ngSubmit) event
+
   form = new FormGroup({
     firstName: new FormControl(null),
     lastName: new FormControl(null),

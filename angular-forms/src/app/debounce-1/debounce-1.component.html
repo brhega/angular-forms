@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search names..." [(ngModel)]="search" (ngModelChange)="onSearchChange($event)">
+  </div>
+  @if (loading) {
+    <div class="text-center my-3">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  }
+  @if (!loading) {
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (name of filteredNames; track name) {
+          <tr>
+            <td>{{ name }}</td>
+          </tr>
+        }
+        @if (filteredNames.length === 0) {
+          <tr>
+            <td colspan="1" class="text-center">No results found.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

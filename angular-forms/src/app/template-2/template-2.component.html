@@ -3,7 +3,7 @@
         <div class="mb-3">
             <label for="name" class="form-label">First Name</label>
             <input type="text" id="firstName" name="firstName" class="form-control" required 
-                [(ngModel)]="formModel.firstName" #firstName="ngModel"/>
+                [(ngModel)]="formModel.firstName" #firstName="ngModel"/> <!-- Template reference variable -->
             @if (firstName.invalid && firstName.touched) {
                 <p class="text-danger">First Name is required</p>
             }
@@ -12,7 +12,7 @@
         <div class="mb-3">
             <label for="name" class="form-label">Last Name</label>
             <input type="text" id="lastName" name="lastName" class="form-control" required 
-                [(ngModel)]="formModel.lastName" #lastName="ngModel"/>
+                [(ngModel)]="formModel.lastName" #lastName="ngModel"/> <!-- Template reference variable -->
             @if (lastName.invalid && lastName.touched) {
                 <p class="text-danger">Last Name is required</p>
             }
